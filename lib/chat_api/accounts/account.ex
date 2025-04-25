@@ -40,7 +40,7 @@ defmodule ChatApi.Accounts.Account do
     field(:company_name, :string)
     field(:company_logo_url, :string)
     field(:time_zone, :string)
-    field(:subscription_plan, :string, default: "starter")
+    field(:subscription_plan, :string, default: "team")
 
     field(:stripe_customer_id, :string)
     field(:stripe_subscription_id, :string)

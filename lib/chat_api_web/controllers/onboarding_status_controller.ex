@@ -99,8 +99,9 @@ defmodule ChatApiWeb.OnboardingStatusController do
   end
 
   @spec has_upgraded_subscription?(Account.t()) :: boolean()
-  def has_upgraded_subscription?(account) do
-    account.subscription_plan != "starter"
+  def has_upgraded_subscription?(_account) do
+    # Always return true since we've set the default plan to "team"
+    true
   end
 
   @spec has_configured_storytime?(binary()) :: boolean()

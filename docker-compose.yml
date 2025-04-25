@@ -20,6 +20,8 @@ services:
       REACT_APP_FILE_UPLOADS_ENABLED: 1
       # Replace with your domain name
       REACT_APP_URL: "app.papercups.io"
+      # Domain for email forwarding addresses
+      SES_FORWARDING_DOMAIN: "mydomain.com"
   db:
     image: postgres:alpine
     restart: always

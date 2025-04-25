@@ -85,17 +85,6 @@ const getStepsMetadata = (
         </>
       ),
     },
-    {
-      completed: onboardingStatus.has_upgraded_subscription,
-      ctaHref: '/settings/billing',
-      ctaText: 'Upgrade subscription',
-      text: (
-        <>
-          <Text strong>Upgrade your subscription</Text> for access to even more
-          features!
-        </>
-      ),
-    },
   ];
 };
 

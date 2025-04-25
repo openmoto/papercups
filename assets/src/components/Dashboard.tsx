@@ -249,7 +249,8 @@ const Dashboard = (props: RouteComponentProps) => {
 
   const [section, key] = getSectionKey(pathname);
   const totalNumUnread = unread.conversations.open || 0;
-  const shouldDisplayBilling = hasValidStripeKey();
+  // Always set to false to disable billing features
+  const shouldDisplayBilling = false;
   const shouldHighlightInbox =
     totalNumUnread > 0 && section !== 'conversations';
 

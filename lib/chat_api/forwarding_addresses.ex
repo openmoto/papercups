@@ -106,7 +106,9 @@ defmodule ChatApi.ForwardingAddresses do
   end
 
   def generate_forwarding_email_address() do
-    domain = Application.get_env(:chat_api, :ses_forwarding_domain, "chat.papercups.io")
+    # Use mydomain.com as the default domain instead of chat.papercups.io
+    # This can be overridden in your environment configuration
+    domain = Application.get_env(:chat_api, :ses_forwarding_domain, "mydomain.com")
 
     generate_forwarding_email_address(domain)
   end
