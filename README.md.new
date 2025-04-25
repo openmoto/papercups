@@ -1,0 +1,84 @@
+# Papercups - Custom Fork
+
+This is a customized fork of [Papercups](https://github.com/papercups-io/papercups), an open-source live customer chat tool written in Elixir.
+
+## About This Fork
+
+The original Papercups project is no longer actively maintained. This fork addresses several issues with the original project:
+
+1. Removes dependencies on the now-defunct papercups.io infrastructure
+2. Implements a custom email forwarding solution
+3. Updates dependencies for security and stability
+4. Provides a self-contained solution that doesn't require external services
+
+## Features
+
+- **Live Chat Widget**: Embed a customizable chat widget on your website
+- **Team Inbox**: Collaborate with your team to respond to customer messages
+- **Email Forwarding**: Forward emails to your chat inbox (using your own domain)
+- **Slack Integration**: Connect with Slack to view and reply to messages
+- **Markdown and Emoji Support**: Add character to your messages
+- **Mobile-Friendly**: Responsive design works on all devices
+
+## Deployment
+
+### Docker Deployment (Recommended)
+
+```bash
+# Clone the repository
+git clone https://github.com/your-org/papercups.git
+cd papercups
+
+# Edit the docker-compose.yml file to update environment variables
+# Particularly update:
+# - SECRET_KEY_BASE (generate a new one)
+# - BACKEND_URL
+# - REACT_APP_URL
+
+# Start the application
+docker-compose up -d
+```
+
+### Environment Variables
+
+Key environment variables to configure:
+
+- `SECRET_KEY_BASE`: A secret key for the app (must be at least 64 bytes)
+- `BACKEND_URL`: Your domain name (e.g., chat.yourdomain.com)
+- `REACT_APP_URL`: Your frontend URL (typically the same as BACKEND_URL)
+- `DATABASE_URL`: PostgreSQL connection string
+- `FROM_ADDRESS`: Email address for sending notifications
+
+See `.env.example` for a complete list of configuration options.
+
+## Email Forwarding Setup
+
+To set up email forwarding with your own domain:
+
+1. Configure your email service (AWS SES recommended) to receive emails
+2. Update the `FROM_ADDRESS` environment variable to use your domain
+3. In the Papercups UI, go to Settings → Email to configure your forwarding addresses
+
+## Differences from Original Papercups
+
+- Subscription system has been disabled; all accounts have full features enabled
+- Email forwarding uses your own domain instead of chat.papercups.io
+- Updated dependencies for improved security
+- Removed references to external papercups.io services
+
+## Maintenance
+
+This fork is actively maintained by [Your Organization]. We regularly:
+
+- Update dependencies
+- Address security vulnerabilities
+- Implement bug fixes
+- Add new features based on our needs
+
+## Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+## License
+
+MIT © Original license from Papercups
